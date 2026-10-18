@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: fragfps-probe-eu
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: PROBE_REGION
+        value: eu
+      - key: PROBE_SHARED_SECRET
+        sync: false
